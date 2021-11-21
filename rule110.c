@@ -7,11 +7,14 @@
 
 #include <stdio.h>
 
-#define STEPS 200				// Amount of lines
+#define STEPS 250				// Amount of lines
+#define MAX_LINE_LEN 130		// Will jump to the next line if the line is too long
+
 #define FILLCHAR 219			// Character to display 1
 #define EMPTYCHAR ' '			// Character to display 0
 
 #define PRINT_ARRAY 1
+#define PRINT_DETAILS 0
 
 int calc_rule(int, int, int);			// Rule conditionals
 int calc_rule_mirror(int, int, int);	// Rule conditionals mirror
@@ -20,19 +23,33 @@ int test_rule(int);						// Debug
 int main() {
 	//test_rule(1);
 
-	char line[STEPS] = {0, 1};  	// Array for line
-	char line2[STEPS] = {0, 1}; 	// Create another array to not overwrite the first one
+	char line[STEPS+1] = {0, 1};  	// Array for line
+	char line2[STEPS+1] = {0, 1}; 	// Create another array to not overwrite the first one
 	int rule_results, change_line;
 	int position = 0;
 	
 	// Clear the arrays
-	for (int n = 2; n <= STEPS; n++){
+	for (int n = 2; n <= STEPS+1; n++){
 		line[n] = 0;
 		line2[n] = 0;
 	}
 
 	// Displaying
-	for (int line_len = 1; line_len < STEPS; line_len++){  // Each line
+	if (PRINT_DETAILS == 0) {
+		printf("+------------------------------------+\n");
+		printf("| Rule 110 visualization             |\n");
+		printf("| https://github.com/r4v10l1/rule110 |\n");
+		printf("+------------------------------------+\n");
+		printf("| Current settings:                  |\n");
+		printf("+---------------+--------------------+\n");
+		printf("| STEPS:  %5d | MAX_LINE_LEN: %3d  |\n", STEPS, MAX_LINE_LEN);
+		printf("| FILLCHAR: %3d | EMPTYCHAR: %3d     |\n", FILLCHAR, EMPTYCHAR);
+		printf("+---------------+--------------------+\n");
+		printf("\n");
+	}
+
+	// Display each line
+	for (int line_len = 1; line_len <= STEPS; line_len++){
 
 		// Print array for debug
 		if (PRINT_ARRAY == 0) {
@@ -53,12 +70,16 @@ int main() {
 				rule_results = calc_rule_mirror(line2[position], line2[position+1], line2[position+2]);
 			}
 
-			if (rule_results == 0) {
-				putchar(EMPTYCHAR);
-			} else {
-				putchar(FILLCHAR);
+			// Only print the character if the line is not too long
+			if (i <= MAX_LINE_LEN) {
+				if (rule_results == 0) {
+					putchar(EMPTYCHAR);
+				} else {
+					putchar(FILLCHAR);
+				}
 			}
 
+			// Switch lines
 			if (change_line == 0) {
 				line[i] = rule_results;
 			} else {
