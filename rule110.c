@@ -37,7 +37,11 @@ int main() {
 		// Print array for debug
 		if (PRINT_ARRAY == 0) {
 			for (int n = 0; n < STEPS; n++){
-				printf("%d ", line[n]);
+				if (change_line == 1) {
+					printf("%d ", line[n]);
+				} else {
+					printf("%d ", line2[n]);
+				}
 			}
 			printf("\n");
 		}
