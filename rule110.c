@@ -68,8 +68,17 @@ int main() {
 				rule_results = calc_rule(line2[position], line2[position+1], line2[position+2], 1);
 			}
 
-			// Only print the character if the line is not too long
-			if (i <= MAX_LINE_LEN) {
+			// Skip line checking if MAX_LINE_LEN is 0
+			if (MAX_LINE_LEN != 0) {
+				// Only print the character if the line is not too long
+				if (i <= MAX_LINE_LEN) {
+					if (rule_results == 0) {
+						putchar(EMPTYCHAR);
+					} else {
+						putchar(FILLCHAR);
+					}
+				}
+			} else {
 				if (rule_results == 0) {
 					putchar(EMPTYCHAR);
 				} else {
