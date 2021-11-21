@@ -6,7 +6,7 @@ You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/
 ## Configuration
 #### Display
 - `STEPS`-`int`: The ammount of lines to be printed.
-- `MAX_LINE_LEN`-`int`: Won't print characters that exceed this position.
+- `MAX_LINE_LEN`-`int`: Won't print characters that exceed this position. **If the value is `0`, it will turn off this option.**
 #### Characters
 - `FILLCHAR`-`int`: The character that the program will print as `1`.
 - `EMPTYCHAR`-`int`: The character that the program will print as `0`.
