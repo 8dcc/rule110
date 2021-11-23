@@ -9,7 +9,7 @@
 
 // Height must be > width
 #define HEIGHT 1000
-#define WIDTH 1234
+#define WIDTH 999
 
 int calc_rule(int a, int b, int c, int mode);	// Rule conditionals
 int calc_array();
