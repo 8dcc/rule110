@@ -14,8 +14,8 @@
    - [Usage](https://github.com/r4v10l1/rule110#Netpbm-Usage)
    - [Configuration](https://github.com/r4v10l1/rule110#Netpbm-Configuration)
    - [Functions](https://github.com/r4v10l1/rule110#Netpbm-Functions)
-3. [Todo](https://github.com/r4v10l1/rule110#Todo)
-
+3. [Examples](https://github.com/r4v10l1/rule110#Examples)
+4. [Todo](https://github.com/r4v10l1/rule110#Todo)
 
 ## ASCII
 You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/main/example.txt).
@@ -60,7 +60,7 @@ int calc_rule(int a, int b, int c, int mode);
 Where `r` is the value returned.
 
 ## Netpbm
-You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/main/example.txt).
+You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png).
 
 ### Netpbm Usage
 ```bash
@@ -77,6 +77,8 @@ rule110-netpbm.o > output.pbm
 int calc_rule(int a, int b, int c, int mode);
 int calc_array();
 ```
+## Examples
+![Example image](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png)
 
 ## Todo
 - The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok. (?)
