@@ -83,4 +83,4 @@ int calc_array();
 ![Example image 2](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png)
 
 ## Todo
-- The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok. (?)
+- ~~The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok.~~
