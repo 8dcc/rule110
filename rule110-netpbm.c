@@ -18,18 +18,17 @@ int main() {
 	int array_len = calc_array();
 
 	char line[array_len];
-	char line2[array_len];
+	char line_aux[array_len];
 	
-	int rule_results, change_line;
+	int rule_results;
 	int position = 0;
 	
 	// Clear the arrays
 	for (int n = 0; n <= array_len; n++){
 		line[n] = 0;
-		line2[n] = 0;
+		line_aux[n] = 0;
 	}
 	line[1] = 1;
-	line2[1] = 1;
 
 	// Start of the .pbm file
 	printf("P1\n"); // Black and white
@@ -39,39 +38,29 @@ int main() {
 	// Display each line
 	for (int y = 1; y <= HEIGHT; y++){	
 		for (int x = 1; x <= WIDTH; x++){
-			// Change arrays each time
-			if (change_line == 1) {
-				rule_results = calc_rule(line[position], line[position+1], line[position+2], 1);
-			} else {
-				rule_results = calc_rule(line2[position], line2[position+1], line2[position+2], 1);
-			}
 
+			rule_results = calc_rule(line[position], line[position+1], line[position+2], 1);
 			putchar(rule_results+48);	
 
-			// Not make the lines too long
+			// Stop printing if the lines are too long
 			if (x % 75 == 0) {
 				putchar('\n');
 			}
 
-			if (change_line == 0) {
-				line[x] = rule_results;
-			} else {
-				line2[x] = rule_results;
-			}
-
+			// Write into the aux array instead of the main one while reading
+			line_aux[x] = rule_results;
+			
 			position++;
+		}
+
+		// After reading the array, replace the aux with the main one
+		for (int n = 0; n <= array_len; n++){
+			line[n] = line_aux[n];
 		}
 
 		putchar('\n');
 		position = 0;
-
-		if (change_line == 0) {
-			change_line = 1;
-		} else {
-			change_line = 0;
-		}
 	}
-	return 0;
 }
 
 int calc_array() {
