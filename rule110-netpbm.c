@@ -97,6 +97,6 @@ int calc_rule(int a, int b, int c, int mode) {
 	} else if (a == 1 && b == 1 && c == 1) {
 		return 0;	// 111
 	} else {
-		return 2;	// ???
+		return 0;	// ???
 	}
 }
