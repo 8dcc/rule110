@@ -78,7 +78,9 @@ int calc_rule(int a, int b, int c, int mode);
 int calc_array();
 ```
 ## Examples
-![Example image](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png)
+<img src="https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example3.png" alt="Example image 1" height="100px" width="100px">
+
+![Example image 2](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png)
 
 ## Todo
 - The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok. (?)
