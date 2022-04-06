@@ -22,14 +22,14 @@ You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/
 
 ### ASCII Configuration
 #### Display
-- `STEPS`-`int`: The ammount of lines to be printed.
-- `MAX_LINE_LEN`-`int`: Won't print characters that exceed this position. **If the value is `0`, it will turn off this option.**
+- `STEPS`: The ammount of lines to be printed.
+- `MAX_LINE_LEN`: Won't print characters that exceed this position. **If the value is `0`, it will turn off this option.**
 #### Characters
-- `FILLCHAR`-`int`: The character that the program will print as `1`.
-- `EMPTYCHAR`-`int`: The character that the program will print as `0`.
+- `FILLCHAR`: The character that the program will print as `1`.
+- `EMPTYCHAR`: The character that the program will print as `0`.
 #### Settings
-- `PRINT_ARRAY`-`int`: If `0`, it will print the array before the line display.
-- `PRINT_DETAILS`-`int`: If `0`, it will print useful information before displaying the simulation.
+- `PRINT_ARRAY`: If `0`, it will print the array before the line display.
+- `PRINT_DETAILS`: If `0`, it will print useful information before displaying the simulation.
 
 ### ASCII Functions
 ```c
@@ -69,8 +69,8 @@ rule110-netpbm.o > output.pbm
 
 ### Netpbm Configuration
 #### Display
-- `HEIGHT`-`int`: The height of the `.pbm` file.
-- `WIDTH`-`int`: The width of the `.pbm` file.
+- `HEIGHT`: The height of the `.pbm` file.
+- `WIDTH`: The width of the `.pbm` file.
 
 ### Netpbm Functions
 ```c
@@ -83,4 +83,5 @@ int calc_array();
 ![Example image 2](https://raw.githubusercontent.com/r4v10l1/rule110/main/examples/example2.png)
 
 ## Todo
-- ~~The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok.~~
+- [X] The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok.
+- [ ] Format the code.
