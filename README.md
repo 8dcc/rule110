@@ -28,8 +28,7 @@ You can see an example [here](https://raw.githubusercontent.com/r4v10l1/rule110/
 - `FILLCHAR`: The character that the program will print as `1`.
 - `EMPTYCHAR`: The character that the program will print as `0`.
 #### Settings
-- `PRINT_ARRAY`: If `0`, it will print the array before the line display.
-- `PRINT_DETAILS`: If `0`, it will print useful information before displaying the simulation.
+- `PRINT_DETAILS`: If `1`, it will print useful information before displaying the simulation.
 
 ### ASCII Functions
 ```c
@@ -84,4 +83,8 @@ int calc_array();
 
 ## Todo
 - [X] The image does weird shit depending on the width. If HEIGHT > WIDTH, the image is ok.
-- [ ] Format the code.
+- [X] Format the code for the ascii version.v
+- [ ] Format the code for the pmb version.v
+- [ ] Add `compile.sh`
+- [X] Make the simulation infinite if steps is 0.
+- [ ] Make a version in SDL2?
